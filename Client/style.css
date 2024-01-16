@@ -1,0 +1,502 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: aliceblue;
+}
+
+svg{
+    width: 5vw;
+    transition: all 0.3s ease;
+}
+
+h1{
+    position: absolute;
+    top: 2vh;
+    right: 0px;
+
+    border-radius: 30px 0px 0px 30px;
+    
+    width: max-content;
+    height: max-content;
+    
+    font-size: 1.5em;
+    padding: 2vh 4vw;
+
+    background-color: black;
+    color: white;
+}
+
+/* #1 -----------------> Connection in the beginning --------------------- */
+#Connection{
+    display: grid;
+    place-items: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    max-width: 100%;
+
+    height: 100%; /* A decommenter modifier en fin de projet */
+    /* height: 0%;  */
+    
+    max-height: 100%;
+    background-color: azure;
+    transform-origin: top;
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+
+#Connection > main{
+    display: grid;
+    place-items: center;
+    grid-auto-flow: row;
+    row-gap: 5vh;
+    padding: 5vh 5vw;
+}
+#Connection > main > input{
+    width: 40vw;
+    font-size: 1.6em;
+    padding: 2vh 1vw;
+    border-radius: 10px;
+    color: black;
+    transition: all 0.3s ease;
+}
+#Connection > main > input:focus{
+    background-color: black;
+    color: cyan;
+}
+
+#Connection > main > button{
+    display: block;
+    width: max-content;
+    height: max-content;
+    background-color: lime;
+    color: black;
+    padding: 2vh 3vw;
+    font-size: 1.5em;
+    transition: all 0.3s ease;
+    border: thick solid transparent;
+    cursor: pointer;
+}
+
+#Connection > main > button:hover{
+    background-color: darkgreen;
+    color: white;
+    border-color: transparent lime transparent lime;
+}
+#Connection > main > button:active{
+    transform: scale(0.9);
+}
+
+#Connection > main > button[disabled]{
+    transform: scale(1) !important;
+    background-color: black;
+    color: white;
+    border: transparent !important;
+    opacity: 0.5 !important;
+}
+
+/* #2 -----------------> Configuration du main --------------------- */
+
+body > main{
+    display: grid;
+    grid-template-columns: max-content auto;
+    width: inherit;
+    height: 100vh;
+    max-height: 100vh;
+}
+
+/* ------------------------> History */
+body > main > header{
+    width: 30vw;
+    background-color: black;
+    box-sizing: border-box;
+    border-right: thick ridge white;
+}
+
+body > main > header > h2{
+    font-size: 1.4em;
+    text-align: center;
+    padding: 2vh 0px;
+    background-color: white;
+    border: none;
+    color: black;
+}
+
+#History > main{
+    display: grid;
+    grid-auto-flow: row;
+    padding: 2vh 0px;
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+#History > main > div{
+    user-select: none;
+    display: grid;
+    grid-template-columns: max-content auto max-content;
+    place-items: center;
+    grid-auto-flow: column;
+    grid-auto-rows: auto;
+    /* background-color: azure; */
+    padding: 0vh 1vw;
+    box-sizing: border-box;
+    column-gap: 1vw;
+    cursor: alias;
+}
+
+#History > main > div > div{
+    place-self: center;
+    width: max-content;
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1;
+    padding: 1vw;
+    /* background-color: antiquewhite; */
+    border: thin dashed;
+    border-radius: 100%;
+    border-color: transparent cyan transparent cyan;
+}
+
+#History > main > div > div > svg{
+    width: 1vw;
+    fill: cyan;
+}
+
+#History > main > div > span{
+    color: white;
+    display: grid;
+    height: 100%;
+    width: 100%;
+
+    overflow: hidden;
+    
+    place-items: center;
+    justify-items: start;
+    box-sizing: border-box;
+}
+
+#History > main > div > span:nth-of-type(1){
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    height: max-content !important;
+}
+
+#History > main > div > span:nth-of-type(2){
+    justify-self: end;
+    color: lime;
+    font-size: 0.8em;
+}
+
+.Missed > span:nth-of-type(2){
+    color: rgb(255, 92, 92) !important;
+}
+
+.OK > span:nth-of-type(2){
+    color: lime !important;
+}
+
+.Occupied> span:nth-of-type(2){
+    color: orange !important;
+}
+
+/* -----------------------> main */
+body > main > main{
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-rows: max-content;
+    width: 100%;
+}
+
+#Me{
+    /* background-color: blanchedalmond; */
+    width: 100%;
+    display: grid;
+    place-content: center;
+    border-bottom: 2px solid black;
+    height: max-content;
+    padding: 5vh 0px;
+    row-gap: 2vh;
+}
+
+#Me > div{
+    place-self: center;
+    width: max-content;
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1;
+    padding: 1.5vw;
+    /* background-color: antiquewhite; */
+    border: 5px ridge;
+    border-radius: 20px;
+    border-color: transparent darkcyan transparent darkcyan ;
+}
+
+#Me > div > svg{
+    width: 10vw;
+    fill: darkcyan;
+}
+
+#Me > span{
+    place-self: center;
+    display: block;
+    color: black;
+    font-weight: bolder;
+    /* background-color: aliceblue; */
+    text-align: center;
+    font-size: 2em;
+    width: 100%;
+    padding: 2vh 5vw;
+    border: thick ridge transparent;
+    border-color: navy transparent navy transparent;
+}
+
+
+/* ------------------------------------> Clients */
+#Clients{
+    display: grid;
+    grid-auto-flow: row;
+    width: 100%;
+    overflow: auto;
+}
+
+#Clients > div{
+    display: grid;
+    grid-template-columns: max-content max-content auto;
+    place-items: center;
+    grid-auto-flow: column;
+    background-color: azure;
+    padding: 0vh 2vw;
+    box-sizing: border-box;
+    column-gap: 2vw;
+    transition: all 0.5s ease;
+    transform-origin: top;
+    /* border-bottom: thin solid black; */
+}
+
+#Clients > div > div{
+    place-self: center;
+    width: max-content;
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1;
+    padding: 1.5vw;
+    /* background-color: antiquewhite; */
+    border: 2px dashed;
+    border-radius: 100%;
+    border-color: transparent rgb(132, 0, 255) transparent rgb(131, 0, 254) ;
+}
+#Clients > div > div > svg{
+    width: 3vw;
+    fill: rgb(132, 0, 255);
+}
+
+#Clients > div span{
+    font-size: 1.4em;
+}
+
+#Clients button{
+    display: grid;
+    place-items: center;
+
+    justify-self: end;
+    background-color: green;
+    width: max-content;
+    aspect-ratio: 1;
+    padding: 1vw;
+    border-radius: 100%;
+    border: transparent solid;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#Clients button:hover{
+    background-color: darkgreen;
+    border-color: lime transparent lime transparent;
+}
+
+#Clients button:active{
+    scale: 0.9;
+}
+
+#Clients button > svg{
+    fill: azure;
+    width: 2vw;
+}
+
+
+/* -----------------> Calling control -------------------> */
+
+body > footer{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: grid;
+    place-items: center;
+    color: white;
+    transition: all 0.5s ease;
+    transform-origin: top;
+    height: 0px;
+    overflow: hidden;
+}
+
+body > footer section{
+    background-color: rgb(0, 18, 56);
+    display: grid;
+    grid-auto-flow: row;
+    place-items: center;
+    width: 50%;
+    height: 90%;
+    border-radius: 30px;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+body > footer section > header{
+    display: grid;
+    place-items: center;
+    grid-auto-flow: row;
+}
+
+body > footer section > header > div{
+    width: max-content !important;
+    
+    aspect-ratio: 1 !important;
+    padding: 2vw;
+    border-radius: 100%;
+    border: thin groove rgb(0, 119, 255);
+    box-sizing: border-box;
+}
+
+body > footer section > header > div > svg{
+    fill: rgb(0, 119, 255);
+    width: 5vw;
+}
+
+body > footer section > header > span:nth-of-type(1){
+    font-weight: bold;
+    font-size: 2em;
+}
+
+body > footer section > header > span:nth-of-type(2){
+    font-size: 1.5em;
+    margin-top: 5vh;
+    color: lime;
+}
+
+
+body > footer section > main{
+    display: grid;
+    grid-template-areas: 
+        "button1 button2"
+        "span1 span2"
+    ;
+    width: 100%;
+    place-items: center;
+}
+
+body > footer section > main > button{
+    width: max-content;
+    aspect-ratio: 1;
+    padding: 1.2vw;
+    border-radius: 100%;
+    border: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+body > footer section > main > button:nth-of-type(1){
+    grid-area: button1;
+    background-color: green;
+}
+
+body > footer section > main > button:nth-of-type(2){
+    grid-area: button2;
+    background-color: red;
+}
+
+body > footer section > main > button:nth-of-type(1) > svg{
+    fill: white;
+}
+
+body > footer section > main > button:nth-of-type(2) > svg{
+    fill: white;
+}
+
+/* -----> Button Hover */
+body > footer section > main > button:nth-of-type(1):hover{
+    background-color: rgb(0, 75, 0);
+}
+
+body > footer section > main > button:nth-of-type(2):hover{
+    background-color: rgb(102, 0, 0);
+}
+
+body > footer section > main > button:hover > svg{
+    transform: rotate(360deg);
+}
+
+body > footer section > main > button:active{
+    transform: scale(0.9);
+}
+
+
+body > footer section > main > span{
+    
+    font-family: consolas,Arial, Helvetica, sans-serif;
+    font-size: 1.4em;
+}
+
+body > footer section > main > span:nth-of-type(1){
+    grid-area: span1;
+    color: lime;
+}
+
+body > footer section > main > span:nth-of-type(2){
+    grid-area: span2;
+    color: red;
+}
+
+
+
+/* -----------------> LOG message --------------------- */
+aside{
+    position: fixed;
+    bottom: 1.5vh;
+    right: 0;
+    transform-origin: right;
+    transition: all 0.3s ease-in-out;
+
+    display: block;
+    width: max-content;
+    max-width: 50vw;
+    font-size: 1.5em;
+    height: max-content;
+    padding: 1vh 2.5vw;
+    border-radius: 20px 0px 0px 20px;
+    background-color: black;
+    color: lime;
+    overflow: hidden;
+    scale: 0;
+    overflow: hidden;
+    overflow-wrap: break-word;
+}
+aside > b{
+    color: lime;
+    font-weight: bolder;
+}
+aside > span{
+    margin: 0px 3vw;
+    text-align: center;
+    color: yellow;
+}
