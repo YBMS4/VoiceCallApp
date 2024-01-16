@@ -5,6 +5,7 @@ This is a simple voice call application in JavaScript. The application allows us
 
 ## Algorithm
 the algorithm is very simple:
+
 1) 
     - Clients connect to the node server with his Id
     - the server register his *Id* attached to his *socket.id* in a *database(JS object)*
